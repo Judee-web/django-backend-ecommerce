@@ -152,11 +152,15 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import dj_database_url
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 DATABASES = {
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
+        default='postgresql://django_ecommerce_2vyf_user:koMRfgt7wrUtY2vhrgDNuKGuzTOdLw8A@dpg-cud4m31opnds73apolr0-a/django_ecommerce_2vyf',
+        conn_max_age=600  # Optional, for persistent database connections
     )
 }
 
